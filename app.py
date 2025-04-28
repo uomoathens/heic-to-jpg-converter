@@ -1,15 +1,20 @@
+import streamlit as st
 import pyheif
 from PIL import Image
 import io
 import zipfile
 
+# Ρυθμίσεις σελίδας
 st.set_page_config(page_title="HEIC to JPG Cloud Converter", page_icon="📸", layout="centered")
 
+# Τίτλος και περιγραφή
 st.title("📸 HEIC to JPG Cloud Converter")
 st.write("Upload your HEIC images and get perfect JPGs instantly!")
 
+# Upload HEIC αρχείων
 uploaded_files = st.file_uploader("Choose HEIC files", type=["heic"], accept_multiple_files=True)
 
+# Λογική μετατροπής
 if uploaded_files:
     output_images = []
 
@@ -50,10 +55,17 @@ else:
     st.info("Please upload HEIC files to start the conversion.")
 
 st.markdown("---")
-st.caption("Made with ❤️ - Free Cloud HEIC to JPG Converter by Uomoathens")
+
+st.markdown(
+    "<div style='text-align: center; font-size:18px; color:#666; margin-bottom:10px;'>"
+    "If you like this tool, consider supporting it!"
+    "</div>",
+    unsafe_allow_html=True
+)
+
 st.markdown(
     """
-    <div style="text-align: center; margin-top: 50px;">
+    <div style="text-align: center; margin-top: 10px;">
         <a href="https://paypal.me/uomoathens?country.x=GR&locale.x=en_US" target="_blank">
             <button style="padding:12px 30px; background-color:#0070ba; color:white; border:none; border-radius:10px; font-size:18px; cursor:pointer;">
                 ❤️ Donate via PayPal
@@ -63,3 +75,7 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
+
+st.markdown("---")
+st.caption("Made with ❤️ | Free Cloud HEIC to JPG Converter by uomoathens")
