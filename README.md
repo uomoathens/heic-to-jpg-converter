@@ -47,25 +47,3 @@ If you find this tool useful, consider supporting its development:
 This project is licensed under the MIT License — feel free to use, modify, and share!
 
 ---
-
-Made with ❤️ by **uomoathens**
-[![Donate via PayPal](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://paypal.me/uomoathens?country.x=GR&locale.x=en_US)
-
----
-
-## 🛠️ Technologies Used
-
-- [Python 3](https://www.python.org/)
-- [Streamlit](https://streamlit.io/)
-- [Pillow (PIL)](https://python-pillow.org/)
-- [Pyheif](https://github.com/carsales/pyheif)
-
----
-
-## 📜 License
-
-This project is licensed under the MIT License — feel free to use, modify, and share!
-
----
-
-Made with ❤️ by **uomoathens**
