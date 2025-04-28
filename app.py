@@ -121,3 +121,30 @@ st.markdown(
 # Footer
 st.markdown("---")
 st.caption("Made with ❤️ by DS | Convert HEIC to JPG | Free Online HEIC Converter")
+
+
+# Divider
+st.markdown("---")
+
+# 📋 Quick SEO Links Section
+st.markdown(
+    """
+    ### 📋 Quick Links - Free HEIC to JPG Conversion
+
+    Looking for the best way to **convert HEIC to JPG**? Explore these resources:
+
+    - [Convert HEIC to JPG Online](https://heic-to-jpg-converter-ll9daajzws8bphhqssvwf6.streamlit.app/)
+    - [Free HEIC Converter Tool](https://heic-to-jpg-converter-ll9daajzws8bphhqssvwf6.streamlit.app/)
+    - [High-Quality HEIC to JPEG Conversion](https://heic-to-jpg-converter-ll9daajzws8bphhqssvwf6.streamlit.app/)
+    - [Drag and Drop HEIC to JPG](https://heic-to-jpg-converter-ll9daajzws8bphhqssvwf6.streamlit.app/)
+    - [Online HEIC to JPG Free Tool](https://heic-to-jpg-converter-ll9daajzws8bphhqssvwf6.streamlit.app/)
+
+    Fast, free, and secure HEIC to JPG conversion in seconds — no sign-up required!
+    """,
+    unsafe_allow_html=True
+)
+
+# Footer
+st.markdown("---")
+st.caption("Made with ❤️ by DS | Free Online HEIC to JPG Converter | Best Free HEIC to JPEG Tool")
+
