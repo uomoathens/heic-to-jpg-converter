@@ -4,10 +4,14 @@ from PIL import Image
 import io
 import zipfile
 
-# Στήσιμο σελίδας
-st.set_page_config(page_title="HEIC to JPG Converter", page_icon="📸", layout="centered")
+# Page config with title
+st.set_page_config(
+    page_title="HEIC to JPG Online Converter | Free HEIC to JPEG",
+    page_icon="📸",
+    layout="centered"
+)
 
-# Custom CSS μόνο για γενικό styling
+# Custom CSS Styling
 st.markdown(
     """
     <style>
@@ -33,22 +37,33 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# Τίτλος και περιγραφή
-st.title("📸 HEIC to JPG Converter")
-st.write("Upload your HEIC images and get perfect JPGs instantly!")
+# Main Title with Keywords
+st.title("📸 Free Online HEIC to JPG Converter")
+st.markdown(
+    """
+    Welcome to the best free **HEIC to JPG Converter** online!  
+    Instantly **convert HEIC files to high-quality JPG** images without installing any software.  
+    Upload your HEIC files, convert them to JPEG format easily, and download them as a ZIP archive.  
+    Perfect for iPhone and iPad users who need to quickly **convert HEIC to JPG online**!
+    """,
+    unsafe_allow_html=True
+)
 
-# Upload κουμπί
+# Subheader for clarity
+st.header("🔄 Convert your HEIC images to JPG in seconds")
+
+# File uploader
 uploaded_files = st.file_uploader(
-    "Upload HEIC files",
+    "**Select your HEIC files to upload**",
     type=["heic"],
     accept_multiple_files=True
 )
 
-# Λογική μετατροπής
+# File processing
 if uploaded_files:
     output_images = []
 
-    with st.spinner('🔄 Converting your images, please wait...'):
+    with st.spinner('🔄 Converting HEIC files to JPG, please wait...'):
         for uploaded_file in uploaded_files:
             try:
                 heif_file = pyheif.read(uploaded_file.read())
@@ -75,7 +90,8 @@ if uploaded_files:
 
         zip_buffer.seek(0)
 
-        st.success("✅ Conversion complete!")
+        st.success("✅ Your HEIC images have been converted to JPG successfully!")
+
         st.download_button(
             label="📥 Download All JPGs as ZIP",
             data=zip_buffer,
@@ -83,18 +99,18 @@ if uploaded_files:
             mime="application/zip"
         )
 else:
-    st.info("Please upload HEIC files to start the conversion.")
+    st.info("Drag & drop your HEIC files or click to select them.")
 
-# Γραμμή χωρισμού
+# Divider
 st.markdown("---")
 
-# Κουμπί Donate
+# Donation Button
 st.markdown(
     """
     <div style="text-align: center; margin-top: 20px;">
         <a href="https://paypal.me/uomoathens?country.x=GR&locale.x=en_US" target="_blank">
             <button style="background-color:#007BFF; color:white; border:none; border-radius:10px; font-size:18px; padding:12px 30px; cursor:pointer;">
-                Donate via PayPal
+                Support this Free HEIC to JPG Tool ❤️
             </button>
         </a>
     </div>
@@ -104,4 +120,4 @@ st.markdown(
 
 # Footer
 st.markdown("---")
-st.caption("Made with ❤️ | Free Cloud HEIC to JPG Converter by DS")
+st.caption("Made with ❤️ by DS | Convert HEIC to JPG | Free Online HEIC Converter")
