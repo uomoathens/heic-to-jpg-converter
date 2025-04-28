@@ -4,10 +4,10 @@ from PIL import Image
 import io
 import zipfile
 
-# Στήσιμο σελίδας με σκοτεινό στυλ
+# Στήσιμο σελίδας
 st.set_page_config(page_title="HEIC to JPG Cloud Converter", page_icon="📸", layout="centered")
 
-# Custom CSS Styling
+# Custom CSS για Responsive Drag & Drop Box
 st.markdown(
     """
     <style>
@@ -21,7 +21,7 @@ st.markdown(
     .stButton>button {
         background-color: #007BFF;
         color: white;
-        border: None;
+        border: none;
         border-radius: 8px;
         padding: 10px 20px;
         font-size: 16px;
@@ -32,10 +32,29 @@ st.markdown(
         background-color: #0056b3;
         color: white;
     }
-    .css-1kyxreq, .css-ffhzg2 {
-        background-color: #1c2230;
-        border: 1px solid #2e374a;
+    .drag-container {
+        border: 2px dashed #cccccc;
         border-radius: 10px;
+        padding: 5vw;
+        text-align: center;
+        background-color: #1c2230;
+        color: #cccccc;
+        margin-bottom: 20px;
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    @media (max-width: 768px) {
+        .drag-container {
+            padding: 8vw;
+            font-size: 4vw;
+        }
+    }
+    @media (max-width: 480px) {
+        .drag-container {
+            padding: 10vw;
+            font-size: 5vw;
+        }
     }
     </style>
     """,
@@ -43,13 +62,20 @@ st.markdown(
 )
 
 # Τίτλος και περιγραφή
-st.title("📸 HEIC to JPG Converter")
+st.title("📸 HEIC to JPG Cloud Converter")
 st.write("Upload your HEIC images and get perfect JPGs instantly!")
 
-# Upload HEIC αρχείων
-uploaded_files = st.file_uploader("Choose HEIC files", type=["heic"], accept_multiple_files=True)
+# Κουτί Drag & Drop
+st.markdown('<div class="drag-container">Drag & Drop your HEIC files here 👇</div>', unsafe_allow_html=True)
 
-# Λογική μετατροπής με SPINNER
+uploaded_files = st.file_uploader(
+    "Choose HEIC files",
+    type=["heic"],
+    accept_multiple_files=True,
+    label_visibility="collapsed"
+)
+
+# Λογική μετατροπής
 if uploaded_files:
     output_images = []
 
