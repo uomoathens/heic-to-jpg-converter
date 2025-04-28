@@ -5,9 +5,9 @@ import io
 import zipfile
 
 # Στήσιμο σελίδας
-st.set_page_config(page_title="HEIC to JPG Cloud Converter", page_icon="📸", layout="centered")
+st.set_page_config(page_title="HEIC to JPG Converter", page_icon="📸", layout="centered")
 
-# Custom CSS Styling για ΤΕΤΡΑΓΩΝΟ και Highlight Drag Box
+# Custom CSS μόνο για γενικό styling
 st.markdown(
     """
     <style>
@@ -28,59 +28,20 @@ st.markdown(
     .stButton>button:hover {
         background-color: #0056b3;
     }
-    .drag-container {
-        border: 2px dashed #cccccc;
-        border-radius: 12px;
-        padding: 5vw;
-        text-align: center;
-        background-color: #1c2230;
-        color: #cccccc;
-        margin-bottom: 20px;
-        max-width: 90%;
-        margin-left: auto;
-        margin-right: auto;
-        transition: background-color 0.3s, border-color 0.3s;
-    }
-    .drag-container:hover {
-        background-color: #26324b;
-        border-color: #66afe9;
-    }
-    .drag-container:active {
-        background-color: #2b3b57;
-        border-color: #66afe9;
-    }
-    .drag-container * {
-        cursor: default !important;
-    }
-    @media (max-width: 768px) {
-        .drag-container {
-            padding: 8vw;
-            font-size: 4vw;
-        }
-    }
-    @media (max-width: 480px) {
-        .drag-container {
-            padding: 10vw;
-            font-size: 5vw;
-        }
-    }
     </style>
     """,
     unsafe_allow_html=True
 )
 
 # Τίτλος και περιγραφή
-st.title("📸 HEIC to JPG Cloud Converter")
+st.title("📸 HEIC to JPG Converter")
 st.write("Upload your HEIC images and get perfect JPGs instantly!")
 
-# Κουτί Drag & Drop
-st.markdown('<div class="drag-container">Drag & Drop your HEIC files here 👇</div>', unsafe_allow_html=True)
-
+# Upload κουμπί
 uploaded_files = st.file_uploader(
-    "Choose HEIC files",
+    "Upload HEIC files",
     type=["heic"],
-    accept_multiple_files=True,
-    label_visibility="collapsed"
+    accept_multiple_files=True
 )
 
 # Λογική μετατροπής
@@ -143,4 +104,4 @@ st.markdown(
 
 # Footer
 st.markdown("---")
-st.caption("Made with ❤️ | Free Cloud HEIC to JPG Converter by uomoathens")
+st.caption("Made with ❤️ | Free Cloud HEIC to JPG Converter by DS")
