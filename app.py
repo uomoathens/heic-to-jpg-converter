@@ -1,8 +1,3 @@
-# 1. Εγκατάσταση βιβλιοθηκών αν δεν τις έχεις
-# (Στο Streamlit Cloud το κάνουμε στο requirements.txt)
-# pip install streamlit pillow pyheif
-
-import streamlit as st
 import pyheif
 from PIL import Image
 import io
@@ -55,4 +50,16 @@ else:
     st.info("Please upload HEIC files to start the conversion.")
 
 st.markdown("---")
-st.caption("Made with ❤️ - Free Cloud HEIC to JPG Converter")
+st.caption("Made with ❤️ - Free Cloud HEIC to JPG Converter by Uomoathens")
+st.markdown(
+    """
+    <div style="text-align: center; margin-top: 50px;">
+        <a href="https://paypal.me/uomoathens?country.x=GR&locale.x=en_US" target="_blank">
+            <button style="padding:12px 30px; background-color:#0070ba; color:white; border:none; border-radius:10px; font-size:18px; cursor:pointer;">
+                ❤️ Donate via PayPal
+            </button>
+        </a>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
