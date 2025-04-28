@@ -7,16 +7,13 @@ import zipfile
 # Στήσιμο σελίδας
 st.set_page_config(page_title="HEIC to JPG Cloud Converter", page_icon="📸", layout="centered")
 
-# Custom CSS για Responsive Drag & Drop Box
+# Custom CSS Styling για ΤΕΤΡΑΓΩΝΟ και Highlight Drag Box
 st.markdown(
     """
     <style>
     body {
         background-color: #0c111b;
         color: #f5f5f5;
-    }
-    .css-1d391kg {
-        background-color: #0c111b;
     }
     .stButton>button {
         background-color: #007BFF;
@@ -30,11 +27,10 @@ st.markdown(
     }
     .stButton>button:hover {
         background-color: #0056b3;
-        color: white;
     }
     .drag-container {
         border: 2px dashed #cccccc;
-        border-radius: 10px;
+        border-radius: 12px;
         padding: 5vw;
         text-align: center;
         background-color: #1c2230;
@@ -43,6 +39,18 @@ st.markdown(
         max-width: 90%;
         margin-left: auto;
         margin-right: auto;
+        transition: background-color 0.3s, border-color 0.3s;
+    }
+    .drag-container:hover {
+        background-color: #26324b;
+        border-color: #66afe9;
+    }
+    .drag-container:active {
+        background-color: #2b3b57;
+        border-color: #66afe9;
+    }
+    .drag-container * {
+        cursor: default !important;
     }
     @media (max-width: 768px) {
         .drag-container {
@@ -135,4 +143,4 @@ st.markdown(
 
 # Footer
 st.markdown("---")
-st.caption("Made with ❤️ | Free Cloud HEIC to JPG Converter by DS")
+st.caption("Made with ❤️ | Free Cloud HEIC to JPG Converter by uomoathens")
